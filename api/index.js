@@ -7,13 +7,15 @@ const mongoose=require("mongoose");
 
 //routes
 const userRoute=require("./routes/users")
-const authRoutes=require("./routes/auth")
+const authRoutes=require("./routes/auth");
+const postRoutes=require("./routes/posts")
 
 dotenv.config();
 app.use(helmet());
 app.use(morgan("common"));
-app.use("/api/users",userRoute)
-app.use("/api/auth",authRoutes)
+app.use("/api/users",userRoute);
+app.use("/api/auth",authRoutes);
+app.use("/api/posts",postRoutes);
 
 
 app.get("/",(req,res)=>{
